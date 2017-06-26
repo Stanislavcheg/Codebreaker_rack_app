@@ -1,8 +1,6 @@
 require 'codebreaker'
 class Service
   def make_guess(guess)
-    return unless @game.current_turn < @game.turns
-    
     begin
       result = @game.evaluate_guess guess
     rescue
@@ -11,7 +9,7 @@ class Service
 
     if @game.is_guessed
       result = "win"
-    else
+    elsif @game.current_turn < @game.turns
       result = "lost"
     end
     result
