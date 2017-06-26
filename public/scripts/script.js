@@ -11,6 +11,7 @@ $( document ).ready(function() {
 	});
 
 	$('#hint-btn').on('click', function() {
+		if (guessBtn.hasClass("disabled")) return
 		$.get( "/hint", function(data) {
 	  		display.html(data);
 		});
@@ -29,6 +30,7 @@ $( document ).ready(function() {
 	});
 
 	guessBtn.on('click',function(){
+	    if (guessBtn.hasClass("disabled")) return
 	    $.post("/guess",
 	    {
 	        guess: input.val()
