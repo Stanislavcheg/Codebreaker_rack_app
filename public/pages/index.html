@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../styles/bootstrap.css">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<script type="text/javascript" src="../scripts/jquery.js"></script>
+	<script type="text/javascript" src="../scripts/bootstrap.js"></script>
+	<script type="text/javascript" src="../scripts/script.js"></script>
+	<title>Codebreaker</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Codebreaker</h1>
+		</header>
+		<form class="form-horizontal" id="menu">
+			<div class="form-group">
+		    	<div class="col-lg-11">
+		      		<div class="well well-sm menu-item" id="display">
+		      			 Click "Start" to play
+		      		</div>
+				</div>
+			</div>
+			<div class="form-group">
+			    <div class="col-lg-11">
+			    	<div class="input-group menu-item">
+				    	<input type="text" class="form-control" id="inputGuess" placeholder="1234">
+				    	<span class="input-group-btn">
+				        	<button class="btn btn-default disabled" id="buttonGuess" type="button">Guess!</button>
+				    	</span>
+    				</div>
+			    </div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-11">
+					<button class="btn btn-default menu-item menu-btn" type="button" id="start-btn">Start</button>
+				</div>				
+			</div>
+			<div class="form-group">
+				<div class="col-lg-11">
+					<button class="btn btn-default menu-item menu-btn" type="button" id="hint-btn">Hint</button>
+				</div>				
+			</div>
+			<div class="form-group">
+				<div class="col-lg-11">
+					<button class="btn btn-default menu-item menu-btn" type="button" id="rules-btn">Rules</button>
+				</div>				
+			</div>
+			<div class="form-group">
+				<div class="col-lg-11">
+					<button class="btn btn-default menu-item menu-btn" type="button" id="scores-btn">Scores</button>
+				</div>				
+			</div>
+		</form>
+	</div>
+
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="win">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">You win!</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Congratulations! Do you want to save score?</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" id="saveScore-btn">Yes</button>
+	         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="lost">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">You lost!</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>You didn't guess the code.</p>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="enterName">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Enter your name:</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="form-group">
+			  <input type="text" class="form-control" id="name">
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" id="saveName-btn">Save</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->	
+</body>
+</html>
+
