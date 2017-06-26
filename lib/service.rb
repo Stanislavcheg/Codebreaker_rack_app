@@ -1,17 +1,18 @@
 require 'codebreaker'
 class Service
   def make_guess(guess)
-    if @game.current_turn < @game.turns
-      begin
-        result = @game.evaluate_guess guess
-      rescue
-        result = "Guess should consist of four numbers between 1 and 6."
-      end
-    else
-      result = "lost"
+    return unless @game.current_turn < @game.turns
+    
+    begin
+      result = @game.evaluate_guess guess
+    rescue
+      result = "Guess should consist of four numbers between 1 and 6."
     end
+
     if @game.is_guessed
       result = "win"
+    else
+      result = "lost"
     end
     result
   end
