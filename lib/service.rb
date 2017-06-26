@@ -9,7 +9,7 @@ class Service
 
     if @game.is_guessed
       result = "win"
-    elsif @game.current_turn < @game.turns
+    elsif @game.current_turn >= @game.turns
       result = "lost"
     end
     result
