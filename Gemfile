@@ -4,3 +4,8 @@ source 'https://rubygems.org'
 gem 'rack'
 gem 'codebreaker', :git => 'https://github.com/Stanislavcheg/Codebreaker', :branch => 'test'
 ruby '2.4.1'
+
+group :development do
+  gem 'rack-test'
+  gem 'rspec'
+end

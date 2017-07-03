@@ -3,6 +3,11 @@ $( document ).ready(function() {
 	var input = $('#inputGuess');
 	var guessBtn = $('#buttonGuess');
 
+	if (document.cookie) {
+		guessBtn.removeClass('disabled');
+		display.html('Take a guess or click "Start" to play a new game.');
+	}
+
 	$('#start-btn').on('click', function() {
 		guessBtn.removeClass('disabled');
 		$.get( "/start", function(data) {
@@ -38,11 +43,9 @@ $( document ).ready(function() {
 	    function(data){
 	    	if(data === "win") {
 	    		$('#win').modal('show');
-	    		endGame();
 	    	}
 	    	else if(data === "lost") {
 	    		$('#lost').modal('show');
-	    		endGame();
 	    	}
 	        else display.html(data);
 	        input.val("");
@@ -66,16 +69,11 @@ $( document ).ready(function() {
 		    {
 		        name: name
 		    },
-		    function(data){
+		  	function(data){
 		        display.html(data);
 		    });
 		}
 		$('#enterName').modal('hide');
 	});
-
-	function endGame() {
-		display.html('Click "Start" to play');
-		$("#buttonGuess").addClass('disabled');
-	}
 });
 

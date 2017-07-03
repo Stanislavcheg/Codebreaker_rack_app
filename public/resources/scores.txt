@@ -1,5 +1,2 @@
-Stanislav won the game for 9 turns. The code was 1621
-Test Player won the game for 4 turns. The code was 1234
-Player 88 won the game for 9 turns. The code was 6554
-Player 88 won the game for 8 turns. The code was 3223
-Test won the game for 7 turns. The code was 4431
+Player won the game for 8 turns. The code was 5633
+1111 won the game for 7 turns. The code was 1441
